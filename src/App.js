@@ -2,6 +2,7 @@ import "./App.css";
 import TopButtons from "./components/top-buttons";
 import Content from "./components/content";
 import { useEffect, useState } from "react";
+import { testData } from "./components/test-data";
 
 function App() {
   const [data, setData] = useState([]);
@@ -14,8 +15,15 @@ function App() {
       const responseJson = await response.json();
       const finalResponse = JSON.stringify(responseJson);
       console.log(responseJson);
-      console.log(finalResponse);
+      // console.log(finalResponse);
       setData(finalResponse);
+
+      // console.log(finalResponse);
+
+      // for (let i = 0; i < finalResponse.length; i++) {
+      //   console.log(finalResponse[i]);
+      //   console.log("\n");
+      // }
     };
     fetchPost();
   }, []);
@@ -23,7 +31,8 @@ function App() {
   return (
     <div className="App">
       <TopButtons />
-      <Content data={data} />
+      {/* <Content data={data} /> */}
+      <testData />
     </div>
   );
 }
